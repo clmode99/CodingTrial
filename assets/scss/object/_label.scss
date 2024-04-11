@@ -1,0 +1,14 @@
+@use "../common/mixin";
+
+$font-size-label     : 12px;
+$label-color: green;
+
+.label {
+	@include mixin.FontSize($font-size-label);
+
+	background-color: $label-color;
+	color: white;
+
+	padding: 8px;
+	border-radius: 10px;
+}

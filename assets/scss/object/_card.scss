@@ -1,0 +1,91 @@
+@use "../common/mixin";
+@use "../common/var";
+@use "../common/font";
+@use "../common/responsive" as *;
+
+.card {
+	display: flex;
+	column-gap: 13px;
+	background-color: var.$base-color;
+
+	@include tab {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	@include sp {
+		gap: 20px;
+	}
+
+	/* Element */
+	&__item {
+		position: relative;
+		width: 33%;
+
+		display: flex;
+		flex-direction: column;
+
+		@include tab {
+			width: 100%;
+			align-items: center;
+		}
+	}
+
+	&__img {
+		position: relative;
+	}
+
+	&__title {
+		position: absolute;
+		top: 155px;
+		left: 15px;
+
+		@include sp {
+			top: 73%/*144px*/;
+		}
+
+		span {
+			width: 100%;
+			position: absolute;
+			top: 42px;
+			left: 15px;
+			display: inline-block;
+			@include font.NeueHaasGrotesk;
+			@include mixin.FontSize(11px);
+			color: var.$main-color;
+
+			@include tab {
+				top: 45px;
+			}
+		}
+	}
+
+	&__contents {
+		padding: 32px 16px 40px;
+
+		display: flex;
+		flex-direction: column;
+		row-gap: 40px;
+
+		@include tab {
+			padding: 10px 0;
+				row-gap: 15px;
+
+			span {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+
+	&__text {
+		@include mixin.FontSize(var.$font-size-small-text);
+		@include mixin.LineHeight(26, var.$font-size-small-text);
+	}
+
+	/* Modifier */
+	&--column {
+		flex-direction: column;
+
+	}
+}

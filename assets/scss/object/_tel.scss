@@ -1,0 +1,46 @@
+@use "../common/font";
+@use "../common/mixin";
+@use "../common/var";
+@use "../common/responsive" as *;
+
+.tel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	i {
+		margin-right: 5px;
+		width : 16px;
+		height: 16px;
+	}
+
+	&__text1 {
+		@include font.NeueHaasGrotesk;
+		@include mixin.FontSize(var.$font-size-big-text);
+		@include mixin.LetterSpacing(100);
+
+		@include sp {
+			@include mixin.FontSize(20px);
+		}
+	}
+
+	&--normal {
+		color: var.$main-color;
+		background-color: var.$base-color;
+	}
+
+	&--main {
+		color: var.$base-color;
+		background-color: var.$main-color;
+		padding: 4px 16px;
+
+		@include sp {
+			padding: 9px 53px;
+		}
+	}
+}

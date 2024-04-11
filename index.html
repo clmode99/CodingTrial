@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coding Trial</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" href="assets/css/style.min.css">
+	<script type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Adobe Fonts設定 -->
+	<script>
+		(function(d) {
+			var config = {
+			kitId: 'wvt4noj',
+			scriptTimeout: 3000,
+			async: true
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+	</script>
+
+	<!-- Font Awesome設定-->
+	<script src="https://kit.fontawesome.com/c4e47f3d5e.js" crossorigin="anonymous"></script></head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<h1 class="logo"><a class="link link--nohover" href="#"><img src="assets/images/logo.png" alt="LOGO" class="logo__img"></a></h1>
+		</div><!-- /.header-left -->
+		<div class="header-right">
+			<nav class="nav">
+				<ul class="list">
+					<li class="list__item"><a class="link" href="#main-concept"><span class="nav__subtitle">CONCEPT</span>コンセプト</a></li>
+					<li class="list__item"><a class="link" href="#main-service"><span class="nav__subtitle">SERVICE</span>事業内容</a></li>
+					<li class="list__item"><a class="link" href="#main-works"><span class="nav__subtitle">WORKS</span>制作実績</a></li>
+					<li class="list__item"><a class="link" href="#"><span class="nav__subtitle">EX.DESIGN</span>デザイン事例</a></li>
+					<li class="list__item"><a class="link" href="#main-blog"><span class="nav__subtitle">BLOG</span>ブログ</a></li>
+				</ul>
+			</nav>
+			<a class="tel tel--normal link" href="tel:03-1234-5678">
+				<p class="text text--big tel__text1"><i class="fa-solid fa-phone fa-2xs"></i>03-1234-5678</p>
+				<p class="text text--small">平日10：00～18：00</p>
+			</a><!-- /.tel -->
+			<a class="button button--color-action button--nohover nav__button" href="#">
+				<i class="fa-solid fa-envelope fa-2xl"></i>お問い合わせ
+			</a><!-- /.button -->
+		</div><!-- /.header-right -->
+		<div class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div><!-- /.hamburger -->
+		<div class="menu">
+			<nav class="nav">
+				<ul class="list">
+					<li class="list__item"><a class="link" href="#main-concept">コンセプト</a></li>
+					<li class="list__item"><a class="link" href="#main-service">事業内容</a></li>
+					<li class="list__item"><a class="link" href="#main-works">制作実績</a></li>
+					<li class="list__item"><a class="link" href="#">デザイン事例</a></li>
+					<li class="list__item"><a class="link" href="#main-blog">ブログ</a></li>
+				</ul>
+			</nav>
+		</div><!-- /.menu -->
+	</header>
+	<main class="main">
+		<div class="main-visual">
+			<div class="main-visual-inner">
+				<div class="main-visual-catchphrase">
+					<div class="main-visual-catchphrase-container">
+						<p class="main-visual-catchphrase-text">法人集客にフォーカスした</p><!-- /.main-catchphrase-text -->
+						<p class="main-visual-catchphrase-text">ホームページ制作のご提案を。</p><!-- /.main-catchphrase-text -->
+					</div><!-- /.main-visual-catchphrase-container -->
+					<p class="main-visual-catchphrase-text main-visual-catchphrase-text--subtitle">デザイン力×集客力で結果に繋げる</p><!-- /.main-catchphraase-text -->
+				</div><!-- /.main-catchphrase -->
+				<div class="action-button main-visual__action-button">
+					<a class="tel tel--main link" href="tel:03-1234-5678">
+						<p class="text text--big tel__text1"><i class="fa-solid fa-phone fa-2xs"></i>03-1234-5678</p>
+						<p class="text text--small">平日10：00～18：00</p>
+					</a><!-- /.tel -->
+					<a class="button button--action button--nohover button--color-action" href="#">
+						お問い合わせ
+						<i class="fa-solid fa-caret-right fa-xs"></i>
+					</a><!-- /.button -->
+				</div><!-- /.main-action -->
+			</div><!-- /.main-visual-inner -->
+			<div class="scroll main-visual__scroll"><span>SCROLL</span></div><!-- /.scroll -->
+		</div><!-- /.main-visual -->
+		<div class="main-news">
+			<p class="main-news__title">NEWS</p><!-- /.main-news-title -->
+			<div class="main-news-container">
+				<time class="text text-date" datetime="2020-00-00">2020/00/00</time>
+				<a class="link link--small" href="#">タイトルテキストリンクタイトルテキストリンクタイトルテキストリンク</a>
+			</div><!-- /.main-news-container -->
+		</div><!-- /.main-news -->
+		<div class="main-concept" id="main-concept">
+			<h2 class="title title--big">CONCEPT</h2>
+			<div class="main-concept-inner">
+				<div class="main-concept-contents fadeUpTrigger">
+					<div class="main-concept-contents-container">
+						<img src="assets/images/img.jpg" alt="会議中">
+						<div class="main-concept-title">
+							<h3 class="title title--medium">高クオリティのホームページを</h3><!-- /.title -->
+							<h3 class="title title--medium">お手頃価格でご提供</h3><!-- /.title -->
+							<p class="text">平均受注単価：<span>45～65</span>万円</p>
+						</div><!-- /.main-concept-title -->
+					</div><!-- /.main-concept-contents-container -->
+					<p class="text text--small main-concept__text">弊社は少数精鋭で制作を進めていくため、大手の制作会社と遜色ない高クオリティなホームページを低コストで制作できます。デザインからコーディング・開発まで基本的に全ての工程を自社内で行うため、無駄な中間コストがかかりません。またデザインが良いだけでなく、集客に繋がるようなご提案をいたします。</p>
+					<div class="main-concept__button">
+						<a class="button button--normal" href="#">
+							詳しく見る
+							<i class="fa-solid fa-caret-right fa-xs"></i>
+						</a><!-- /.button -->
+					</div><!-- /.main-concept__button -->
+				</div><!-- /.main-concept-contents -->
+			</div><!-- /.main-concept-inner -->
+		</div><!-- /.main-concept -->
+		<div class="bg--features">
+			<div class="main-features">
+				<div class="main-features-left">
+					<div class="main-features-title">
+						<h2 class="title--medium">LOGOの3つの特徴</h2><!-- /.title--medium -->
+						<p class="text">他の制作会社様との違い</p><!-- /.text -->
+					</div><!-- /.main-features-title -->
+					<p class="text text--small main-features__text">集客に特化したクオリティの高いデザインを安価な制作費用でご提供します。</p><!-- /.text -->
+				</div><!-- /.main-features-left -->
+				<div class="main-features-right list">
+					<div class="list__item">
+						<p class="main-features-no">01</p><!-- /.main-features-no -->
+						<div class="main-features-contents">
+							<h3 class="main-features-contents-title">集客を最優先</h3><!-- /.title -->
+							<p class="text text--small">特徴についての文章特徴についての文章特徴についての文章特徴についての文章特徴についての文章</p><!-- /.text -->
+						</div><!-- /.main-features-contents -->
+					</div><!-- /.list__item -->
+					<div class="list__item">
+						<p class="main-features-no">02</p><!-- /.main-features-no -->
+						<div class="main-features-contents">
+							<h3 class="main-features-contents-title">安価な制作費用</h3><!-- /.title -->
+							<p class="text text--small">特徴についての文章特徴についての文章特徴についての文章特徴についての文章特徴についての文章</p><!-- /.text -->
+						</div><!-- /.main-features-contents -->
+					</div><!-- /.list__item -->
+					<div class="list__item">
+						<p class="main-features-no">03</p><!-- /.main-features-no -->
+						<div class="main-features-contents">
+							<h3 class="main-features-contents-title">戦略的なデザイン</h3><!-- /.title -->
+							<p class="text text--small">特徴についての文章特徴についての文章特徴についての文章特徴についての文章特徴についての文章</p><!-- /.text -->
+						</div><!-- /.main-features-contents -->
+					</div><!-- /.list__item -->
+				</div><!-- /.main-features-right -->
+			</div><!-- /.main-features -->
+		</div><!-- /.bg--features -->
+		<div class="main-service" id="main-service">
+			<h2 class="title title--big">SERVICE</h2>
+			<div class="main-service-contents fadeUpTrigger">
+				<h3 class="title title--medium">WEB集客をトータルサポート</h3><!-- /.title -->
+				<p class="text text--small main-service__text">デザインからコーディング・開発まで基本的に全ての工程を自社内で行うため、無駄な中間コストがかかりません。またデザインが良いだけでなく、集客に繋がるようなご提案をいたします。</p><!-- /.text -->
+				<div class="card main-service__card">
+					<div class="card__item">
+						<div class="card__img">
+							<img src="assets/images/card_1.jpg" alt="ホームページ制作事業">
+							<div class="card__title">
+								<h4 class="title title--small">ホームページ制作事業</h4><!-- /.card__title -->
+								<span>WEBSITE DESIGN</span>
+							</div><!-- /.card__title -->
+						</div><!-- /.card__img -->
+						<div class="card__contents">
+							<p class="card__text">事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章</p><!-- /.card__text -->
+							<span>
+								<a class="button button--normal" href="#">
+									詳しく見る
+									<i class="fa-solid fa-caret-right fa-xs"></i>
+								</a><!-- /.button -->
+							</span>
+						</div><!-- /.card__contents -->
+					</div><!-- /.card__item -->
+					<div class="card__item">
+						<div class="card__img">
+							<img src="assets/images/card_2.jpg" alt="SEO対策事業">
+							<div class="card__title">
+								<h4 class="title title--small">SEO対策事業</h4><!-- /.card__title -->
+								<span>SEARCH ENGINE MARKETING</span>
+							</div><!-- /.card__title -->
+						</div><!-- /.card__img -->
+						<div class="card__contents">
+							<p class="card__text">事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章</p><!-- /.card__text -->
+							<span>
+								<a class="button button--normal" href="#">
+									詳しく見る
+									<i class="fa-solid fa-caret-right fa-xs"></i>
+								</a><!-- /.button -->
+							</span>
+						</div><!-- /.card__contents -->
+					</div><!-- /.card__item -->
+					<div class="card__item">
+						<div class="card__img">
+							<img src="assets/images/card_3.jpg" alt="WEB">
+							<div class="card__title">
+								<h4 class="title title--small">WEB運用事業</h4><!-- /.card__title -->
+								<span>WEB OPERATION</span>
+							</div><!-- /.card__title -->
+						</div><!-- /.card__img -->
+						<div class="card__contents">
+							<p class="card__text">事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章事業内容についての文章</p><!-- /.card__text -->
+							<span>
+								<a class="button button--normal" href="#">
+									詳しく見る
+									<i class="fa-solid fa-caret-right fa-xs"></i>
+								</a><!-- /.button -->
+							</span>
+						</div><!-- /.card__contents -->
+					</div><!-- /.card__item -->
+				</div><!-- /.card -->
+			</div><!-- /.main-service-contents -->
+		</div><!-- /.main-service -->
+		<div class="main-works" id="main-works">
+			<h2 class="title title--big">WORKS</h2>
+			<div class="main-works-contents">
+				<h3 class="title title--medium">WEB集客をトータルサポート</h3><!-- /.title -->
+				<p class="text text--small main-works__text">BtoBのコーポレートサイトを中心に様々なWEBサイトの制作実績がございます。集客に繋がるデザインで御社の売上UPに貢献する提案をします。</p><!-- /.text -->
+				<div class="slider__arrow">
+					<div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div><!-- /.swiper-button-prev -->
+					<div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div><!-- /.swiper-button-next -->
+					</div><!-- /.swiper__arrow -->
+				<div class="swiper slider main-works__slider">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide slider__item">
+							<img src="assets/images/slider_1.png" alt="下倉架空税理士事務所様" class="slider__img">
+							<h4 class="slider__title">下倉架空税理士事務所 様</h4><!-- /.slider__title -->
+							<p class="slider__text">ろご区にある税理士事務所のコーポレートサイト。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。</p><!-- /.slider__text -->
+							<div class="slider__button">
+								<div class="slider__inner">
+									<a class="button button--normal" href="#">
+										詳しく見る
+										<i class="fa-solid fa-caret-right fa-xs"></i>
+									</a><!-- /.button -->
+									<a class="button button--normal2" href="#">
+										デザインから別の事例を探す
+										<i class="fa-solid fa-caret-right fa-xs"></i>
+									</a><!-- /.button -->
+								</div><!-- /.slider__button -->
+							</div><!-- /.slider__button -->
+						</div><!-- /.slider__item -->
+						<div class="swiper-slide slider__item">
+							<img src="assets/images/slider_2.png" alt="下倉架空税理士事務所様" class="slider__img">
+							<h4 class="slider__title">下倉架空税理士事務所 様</h4><!-- /.slider__title -->
+							<p class="slider__text">ろご区にある税理士事務所のコーポレートサイト。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。</p><!-- /.slider__text -->
+							<div class="slider__button">
+								<div class="slider__inner">
+									<a class="button button--normal" href="#">
+										詳しく見る
+										<i class="fa-solid fa-caret-right fa-xs"></i>
+									</a><!-- /.button -->
+									<a class="button button--normal2" href="#">
+										デザインから別の事例を探す
+										<i class="fa-solid fa-caret-right fa-xs"></i>
+									</a><!-- /.button -->
+								</div><!-- /.slider__button -->
+							</div><!-- /.slider__button -->
+						</div><!-- /.slider__item -->
+						<div class="swiper-slide slider__item">
+							<img src="assets/images/slider_3.png" alt="下倉架空税理士事務所様" class="slider__img">
+							<h4 class="slider__title">下倉架空税理士事務所 様</h4><!-- /.slider__title -->
+							<p class="slider__text">ろご区にある税理士事務所のコーポレートサイト。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。クライアントの要望とそれに対しての対応やポイントなどに関する文章が入ります。</p><!-- /.slider__text -->
+							<div class="slider__button">
+								<div class="slider__inner">
+									<a class="button button--normal" href="#">
+										詳しく見る
+										<i class="fa-solid fa-caret-right fa-xs"></i>
+									</a><!-- /.button -->
+									<a class="button button--normal2" href="#">
+										デザインから別の事例を探す
+										<i class="fa-solid fa-caret-right fa-xs"></i>
+									</a><!-- /.button -->
+								</div><!-- /.slider__button -->
+							</div><!-- /.slider__button -->
+						</div><!-- /.slider__item -->
+					</div><!-- /.swiper-wrapper -->
+				</div><!-- /.slider -->
+			</div><!-- /.main-works-contents -->
+		</div><!-- /.main-works -->
+		<div class="bg bg--blog">
+			<div class="main-blog" id="main-blog">
+				<h2 class="title title--big">BLOG</h2><!-- /.title -->
+				<div class="main-blog-contents fadeUpTrigger">
+					<div class="list">
+						<div class="list__item">
+							<time class="text text-date" datetime="2020-00-00">2020/00/00</time>
+							<a class="link link--small" href="#">タイトルテキストリンクタイトルテキストリンクタイトルテキストリンク</a>
+						</div><!-- /.list__item -->
+						<div class="list__item">
+							<time class="text text-date" datetime="2020-00-00">2020/00/00</time>
+							<a class="link link--small" href="#">タイトルテキストリンクタイトルテキストリンクタイトルテキストリンク</a>
+						</div><!-- /.list__item -->
+						<div class="list__item">
+							<time class="text text-date" datetime="2020-00-00">2020/00/00</time>
+							<a class="link link--small" href="#">タイトルテキストリンクタイトルテキストリンクタイトルテキストリンク</a>
+						</div><!-- /.list__item -->
+						<div class="list__item">
+							<time class="text text-date" datetime="2020-00-00">2020/00/00</time>
+							<a class="link link--small" href="#">タイトルテキストリンクタイトルテキストリンクタイトルテキストリンク</a>
+						</div><!-- /.list__item -->
+					</div><!-- /.list -->
+				</div><!-- /.main-blog-contents -->
+			</div><!-- /.main-blog -->
+		</div><!-- /.main-bg -->
+		<div class="bg bg--contact">
+			<div class="main-contact">
+				<p class="text--big main-contact__text">
+					お気軽にお問い合わせください！<br>
+					サクッと概算見見積書を作成します
+				</p><!-- /.text--big -->
+				<div class="action-button main-contact__action-button">
+					<a class="tel tel--main link" href="tel:03-1234-5678">
+						<p class="text text--big tel__text1"><i class="fa-solid fa-phone fa-2xs"></i>03-1234-5678</p>
+						<p class="text text--small">平日10：00～18：00</p>
+					</a><!-- /.tel -->
+					<a class="button button--action button--nohover button--color-action" href="#">
+						お問い合わせ
+						<i class="fa-solid fa-caret-right fa-xs"></i>
+					</a><!-- /.button -->
+				</div><!-- /.action-button -->
+			</div><!-- /.main-contact -->
+		</div><!-- /.bg -->
+	</main>
+	<footer class="footer">
+		<div class="logo">
+<a class="link link--nohover" href="#"><img src="assets/images/logo_2.png" alt="LOGO" class="logo__img"></a>
+		</div><!-- /.logo -->
+		<address class="address footer__address">〒123-456　東京都架空区架空1-1-1　KAKUビル2F</address><!-- /.text -->
+		<small class="copyright footer__copyright">&copy; Copyright LOGO All rights reserved.</small>
+	</footer>
+	<script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.min.js"></script>
+</body>
+</html>

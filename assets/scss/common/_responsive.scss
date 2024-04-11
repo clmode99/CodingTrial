@@ -1,0 +1,36 @@
+// レスポンシブ対応のときに使う
+// 〜使い方〜
+// 対応させたい箇所に「@include tab { (適用させたいやつ) 」と書く
+// 例：タブレットにフォントサイズ2remを対応させたい処理を書きたい場合
+// @include tab {
+// 		font-size: 2rem;
+// }
+
+// ※各ブレイクポイントを設定する！
+$tablet-break-point: 960px;
+$smartphone-break-point: 450px;
+
+@mixin pc {
+	@media screen and (min-width: calc($tablet-break-point + 1px)) {
+		@content;
+	}
+}
+
+@mixin tab {
+	@media screen and (max-width: $tablet-break-point) {
+		@content;
+	}
+}
+
+@mixin sp {
+	@media screen and (max-width: $smartphone-break-point) {
+		@content;
+	}
+}
+
+// 微調整用
+@mixin otherResponsive($px) {
+	@media screen and (max-width: $px) {
+		@content;
+	}
+}

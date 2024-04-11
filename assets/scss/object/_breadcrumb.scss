@@ -1,0 +1,38 @@
+/*
+パンくずリスト置きたいところにこれを置く
+<ul class="breadcrumb">
+	<li class="breadcrumb__item"><a href="#">TOP</a></li>
+	<li class="breadcrumb__item"><a href="#"></a></li>
+	<li class="breadcrumb__item"><a href="#"></a></li>
+	<li class="breadcrumb__item"></li>
+</ul>
+*/
+@use "../common/mixin";
+
+.breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		@include mixin.FontSize(20px);
+		
+		&:not(:last-of-type){
+			&::after {
+				content: "/";
+				margin: 0 .6em;
+			}
+		}
+	}
+
+	// Breadcrumb NavXT用
+	li {
+		@include mixin.FontSize(20px);
+
+		&:not(:last-of-type){
+			&::after {
+				content: "/";
+				margin: 0 .6em;
+			}
+		}
+	}
+}

@@ -1,0 +1,127 @@
+@use "../common/var";
+@use "../common/mixin";
+
+.button {
+	position: relative;
+	text-align: center;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: var.$base-color;
+		width: 100%;
+		height: 100%;
+
+		// ふわっとホバー
+		opacity: 0;
+		transition: 0.5s;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0.15;
+		}
+	}
+
+	&--nohover {
+		transition: none;
+		opacity: 1;
+
+		&:hover {
+			&::before {
+				width: 0;
+				height: 0;
+				opacity: 0;
+			}
+		}
+	}
+
+	&--normal {
+		display: inline-block;
+		width: 240px;
+		padding: 13px 0;
+		@include mixin.FontSize(14px);
+		background: var.$base-color;
+		color: var.$main-color;
+		border: 1px solid var.$main-color;
+
+		z-index: 1;
+
+		i {
+			margin-left: 16px;
+		}
+
+		&::before {
+			content: "";
+			background: var.$main-color;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			transform: scale(0, 1);
+			transform-origin: left top;
+			transition: .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			z-index: -1;
+		}
+
+		&:hover {
+			color: var.$base-color;
+			
+			&::before {
+				transform: scale(1, 1);
+				opacity: 1;		
+			}
+		}
+	}
+
+	&--normal2 {
+		display: inline-block;
+		width: 240px;
+		padding: 13px 0;
+		@include mixin.FontSize(14px);
+		background: var.$main2-color;
+		color: var.$base-color;
+	}
+
+	&--action {
+		position: relative;
+		display: inline-block;
+		padding: 18px 70px;
+		@include mixin.FontSize(20px);
+		
+		i {
+			margin-left: 10px;
+		}
+	}
+
+	// ユーザーの行動を促すボタン
+	&--color {
+		&-action {
+			background-color: var.$button-action-bg-color;
+			color: var.$reverse-color;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: #185A5D;
+			}
+		}
+	}
+
+
+	// ボタン無効時(オーバーレイ)
+	// 参考サイト：https://csshtml.work/hover-opacity/
+	&--disabled {
+		pointer-events: none;
+		opacity: 0.4;
+
+		&-overlay {
+			background: black;
+		}
+	}
+}

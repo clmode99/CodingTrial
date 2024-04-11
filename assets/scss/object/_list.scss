@@ -1,0 +1,13 @@
+@use "../common/mixin";
+@use "../common/var";
+
+.list {
+	display: flex;
+	position: relative;
+
+
+	/* Element */
+	&__item {
+
+	}
+}

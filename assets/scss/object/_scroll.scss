@@ -1,0 +1,47 @@
+@use "../common/font";
+@use "../common/mixin";
+@use "../common/var";
+
+.scroll {
+	color: var.$base-color;
+	@include font.Quicksand;
+	@include mixin.FontSize(10px);
+
+	height: 56px;
+
+	span {
+		position: relative;
+		top: -45px;
+		writing-mode: vertical-rl;
+		@include mixin.LetterSpacing(100);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 6px;
+		width: 1px;
+		height: 30px;
+		background: var.$base-color;
+		animation: pathmove 1.4s ease-in-out infinite;
+		opacity: 0;
+	}
+}
+
+@keyframes pathmove {
+	0% {
+		height: 0;
+		top: 0;
+		opacity: 0;
+	}
+	30% {
+		height: 30px;
+		opacity: 1;
+	}
+	100% {
+		height: 0;
+		top: 56px;
+		opacity: 0;
+	}
+}

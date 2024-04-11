@@ -1,0 +1,48 @@
+@use "../common/mixin";
+@use "../common/var";
+@use "../common/responsive" as *;
+
+.link {
+	display: inline-block;
+	width: fit-content;
+
+	color: inherit;
+	@include mixin.FontSize(var.$font-size-medium-text);
+	position: relative;
+
+	// ふわっとホバー
+	transition: 0.5s;
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&--nohover {
+		transition: 0;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&--small {
+		@include mixin.FontSize(16px);
+		@include mixin.LineHeight(22, 16px);
+		font-weight: 300;
+		text-decoration: underline;
+
+		@include sp {
+			@include mixin.FontSize(14px);
+		}
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+	&--arrow-right {
+		&::after {
+			content: '▶';
+			margin-left: 7px;
+		}
+	}
+}

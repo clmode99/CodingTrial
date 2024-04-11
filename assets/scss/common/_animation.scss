@@ -1,0 +1,31 @@
+/*
+〜アニメーションの使い方〜
+
+１、適用させたい要素をブロック要素にする
+２、適用させたい要素にfadeUpTriggerクラスをつける
+
+*/
+
+.fadeUpTrigger {
+	opacity: 0;
+}
+
+.fadeUp {
+	animation-name: fadeUpAnime;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY((0));
+	}
+}
+

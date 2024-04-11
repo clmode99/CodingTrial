@@ -1,0 +1,100 @@
+@use "../common/mixin";
+@use "../common//var";
+@use "../common/responsive" as *;
+
+.hamburger {
+	display: none;
+
+	@include tab {
+		display: block;
+		margin-right: 15px;
+
+		position: relative;
+		background: var.$main-color;
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+		z-index: 10;
+	}
+
+	span {
+		display: inline-block;
+		position: absolute;
+		left: 14px;
+		height: 3px;
+		background: var.$base-color;
+		width: 45%;
+		transition: all .4s;
+
+		&:nth-of-type(1) {
+			top: 15px;
+		}
+		&:nth-of-type(2) {
+			top: 23px;
+		}
+		&:nth-of-type(3) {
+			top: 31px;
+		}
+	}
+
+	&.active {
+		span {
+			&:nth-of-type(1) {
+				top: 18px;
+				left: 18px;
+				transform: translateY(6px) rotate(-45deg);
+				width: 30%;
+			}
+			&:nth-of-type(2) {
+				opacity: 0;
+			}
+			&:nth-of-type(3) {
+				top: 30px;
+				left: 18px;
+				transform: translateY(-6px) rotate(45deg);
+				width: 30%;
+			}
+		}
+	}
+}
+
+.menu {
+	@include pc {
+		display: none;
+	}
+
+	@include tab {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 5;
+		width: 50vw;
+		height: 100vh;
+		background: var.$main-color;
+		transform: translateX(100vw);
+		transition: all .3s linear;
+
+		@include sp {
+			width: 80vw;
+		}
+	}
+
+	&.active {
+		transform: translateX(0);
+	}
+
+	.nav .list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-top: 100px;
+
+		&__item {
+			padding: 1em;
+			text-align: center;
+			color: var.$base-color;
+		}
+	}
+
+}

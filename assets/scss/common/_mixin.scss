@@ -1,0 +1,103 @@
+@use "var";
+@use "function";
+
+// コンテンツを中央寄せにする(PC版)
+@mixin FixContentsCenterPc {
+	width: 100%;
+	max-width: var.$contents-width-pc;
+	margin: 0 auto;
+}
+
+// コンテンツを中央寄せにする(タブレット版)
+@mixin FixContentsCenterTablet {
+	width: 95%;
+	max-width: var.$contents-width-tab;
+	margin: 0 auto;
+}
+
+// コンテンツを中央寄せにする(スマホ版)
+@mixin FixContentsCenterSp {
+	width: 90%;
+	margin: 0 auto;
+}
+
+// 中央配置(親要素にdisplay: relativeをつけること)
+@mixin ArrangementCenter {
+	position: absolute;
+	top: 50%;
+	left : 50%;
+	transform: translate(-50%, -50%);
+}
+
+// 背景画像を設定する
+@mixin SetBackGroundImage($url) {
+	background-image: url($url);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+// フォントサイズを設定する(px→rem)
+@mixin FontSize($fontSize) {
+	font-size: calc($fontSize / var.$base-font-size) + rem;
+}
+
+// 行間を求める(XD、Figma)
+@mixin LineHeight($LineHeight, $FontSize) {
+	line-height: calc($LineHeight / function.StripUnit($FontSize));
+}
+
+// 字間を調整する(XD用)
+@mixin LetterSpacing($xdLetterSpacing) {
+	letter-spacing: calc($xdLetterSpacing / 1000) + em;
+}
+
+// Flexboxを適用する
+@mixin Flex {
+	display: flex;
+
+	/* Modifier */
+	&--column {
+		flex-direction: column;
+	}
+	
+	&--wrap {
+		flex-wrap: wrap;
+	}
+
+	&--space-between {
+		justify-content: space-between;
+		column-gap: 20px;
+	}
+
+	&--center {
+		justify-content: center;
+		align-items: center;
+
+		&-main {
+			justify-content: center;
+		}
+		&-cross {
+			align-items: center;
+		}
+	}
+
+	@for $i from 0 through 50 {
+		@if $i % 5 == 0 {
+			&--column-gap-#{$i} {
+				column-gap: $i + px;
+			}
+	
+			&--row-gap-#{$i} {
+				row-gap: $i + px;
+			}
+		}
+	}
+}
+
+// 接頭辞がついてるクラス名の設定(まんまやな・・・)
+@mixin SetPrefixClass($prefix) {
+	[class^=#{$prefix}], [class*=" #{$prefix}"] {
+		@content;
+	}
+}

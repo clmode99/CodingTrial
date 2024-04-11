@@ -1,0 +1,200 @@
+@use "../common/mixin";
+@use "../common/var";
+
+$form-color: var.$button-default-color;
+$border-radius: 2px;
+
+// 接頭辞[form-]の設定
+@include mixin.SetPrefixClass("form-") {
+	@include mixin.FontSize(var.$font-size-medium-text);
+}
+
+// カスタマイズフォーム参考URL：https://moshashugyo.com/media/css-form-customize
+.form {
+	@include mixin.Flex;
+
+	/* Block */
+	&-label {
+		position: relative;
+
+		/* Element */
+
+		// Mix
+		&__label {
+			display: inline-block;
+			margin-left: 5px;
+		}
+	}
+
+	&-text {
+		height: 2.2em;
+		width: 100%;
+		padding: 0 16px;
+		border-radius: $border-radius;
+		border: none;
+		box-shadow: 0 0 0 1px var.$font-color inset;
+		appearance: none;
+
+		&:focus {
+			outline: 0;
+			//box-shadow: 0 0 0 2px var.$button-default-color inset;
+		}
+	}
+
+	&-select {
+		padding: 8px 5px;
+	}
+
+	&-checkbox {
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		border: 0;
+		padding: 0;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		margin: -1px;
+
+		&-name {
+			position: relative;
+			cursor: pointer;
+			display: inline-flex;
+			align-items: center;
+			
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 1em;
+				height: 1em;
+				border: 1px solid var.$font-color;
+				border-radius: 3px;
+				margin-right: 6px;
+				flex-shrink: 0;
+				background-color: white;
+			}
+		}
+	}
+
+	&-textarea {
+		display: block;
+
+		resize: vertical;
+		line-height: 1.5;
+		width: 100%;
+		height: 10em;
+		padding: 10px 16px;
+		border-radius: $border-radius;
+		border: none;
+		box-shadow: 0 0 0 1px var.$font-color inset;
+		appearance: none;
+
+		&:focus {
+			outline: 0;
+			//box-shadow: 0 0 0 2px var.$button-default-color inset;
+		}
+	}
+
+	&-hidden {
+		display: none;
+	}
+
+	&-submit {
+		display: inline-block;
+		cursor: pointer;
+		margin: 0 auto;
+
+		width: 50%;
+		padding: 10px;
+		border: none;
+		border-radius: 100vh;
+		color: white;
+		background-color: var.$main-color;
+		//border-bottom: 7px solid var.$button-default-color;
+
+		&:hover {
+			// TODO:背景白に近いから、逆にしたら見えなくなる
+			margin-top: 6px;
+			border-bottom: none;
+		}
+
+		&:focus {
+			outline: 0;
+			//box-shadow: 0 0 0 2px var.$button-default-color;
+		}
+	}
+
+	/* Element */
+	&__item {
+		@include mixin.Flex;
+	}
+
+
+	/* Modifier */
+
+}
+
+.form-checkbox:checked + .form-checkbox-name {
+	// 背景
+	&::before {
+		//content: '';
+		//border: 1px solid $form-color;
+		//background-color: $form-color;
+	}
+
+	// チェックマーク
+	&::after {
+		content: '';
+		position: absolute;
+		border: solid $form-color;
+		border-width: 0 2px 2px 0;
+		left: 0.35em;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 0.35em;
+		height: 0.6em;
+		transform: translateY(-1px) rotate(45deg);
+	}
+}
+.form-checkbox:focus-visible + .form-checkbox-name .form-checkbox-text {
+	background: linear-gradient(transparent 90%, $form-color 90%);
+}
+
+// 生年月日用
+.birthday {
+	display: flex;
+	column-gap: 10px;
+
+	position: relative;
+	width: 50%;
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		position: relative;
+		//width: 100%;
+
+		>span {
+			margin-right: 5px;
+
+			input, select {
+				width: 100% !important;
+			}
+		}
+
+		>span:has(.birthday__item-year) {
+			width: 80px !important;
+		}
+		>span:has(.birthday__item-month) {
+			width: 70px !important;
+		}
+		>span:has(.birthday__item-day) {
+			width: 55px !important;
+		}
+	}
+
+
+}

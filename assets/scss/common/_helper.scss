@@ -1,0 +1,26 @@
+// ヘルパークラス
+// 命名するほどでもないけど、このスタイルを適用させたいんだよな〜という時に使う
+
+// widthを0%から100%まで指定する
+@for $i from 0 through 100 {
+	.width-#{$i} {
+		width: #{percentage($i * 0.01)} !important;
+	}
+}
+
+// heightを0%から100%まで指定する
+@for $i from 0 through 100 {
+	.height-#{$i} {
+		height: #{percentage($i * 0.01)} !important;
+	}
+}
+
+// 隠したい
+.hide {
+	display: none !important;
+}
+
+// 折り返したくない
+.nowrap {
+	white-space: nowrap !important;
+}

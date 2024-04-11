@@ -1,0 +1,54 @@
+@use "header";
+@use "main";
+@use "footer";
+@use "object/object";
+@use "common/var";
+@use "common/helper";
+@use "common/mixin";
+@use "common/font";
+@use "common/animation";
+
+// ※フォントファイルを使う場合は、ここに設定する
+@font-face {
+	font-family: 'フォント名';
+	src: url('../fonts/') format('otf');
+}
+
+* {
+	letter-spacing: 0;
+	box-sizing: border-box;		// paddingとborderを要素のwidthとheightに含む
+}
+
+html {
+	font-size: var.$base-font-size;
+}
+
+body {
+	@include font.HeiseiKakuGothic;
+	font-weight: 500;
+	color: var.$font-color;
+	overflow-x: hidden;
+	@include mixin.FontSize(var.$font-size-medium-text);
+}
+
+// bodyだけだとフォーム関連にfont-familyが適用されないので、個別で適用させる
+input, textarea, select, button {
+	@include font.HeiseiKakuGothic;
+	color: var.$font-color;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	@include font.HeiseiKakuGothic;
+}

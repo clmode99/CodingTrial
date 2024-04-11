@@ -1,0 +1,661 @@
+@use "common/mixin";
+@use "common/var";
+@use "common/font";
+@use "common/responsive" as *;
+
+@mixin SetBackGroundImageMain($url, $lr) {
+	@include pc {
+		background-image: url($url);
+		background-position: top $lr;
+		background-size: auto;
+		background-repeat: no-repeat;
+	}
+}
+
+.main {
+	&-visual {
+		@include mixin.SetBackGroundImage("../images/fv.jpg");
+		height: 755px;
+		transform: translateY(-80px);		// -80px:ヘッダーの高さ分上に移動させる
+	
+		position: relative;
+
+		@include sp {
+			height: 555px;
+		}
+
+		&-inner {
+			position: absolute;
+			top: 260px;
+			left: 113px;
+
+			@include tab {
+				left: 70px;
+			}
+
+			@include sp {
+				top: 160px;
+				left: 15px;
+			}
+		}
+
+		&-catchphrase {
+			display: flex;
+			flex-direction: column;
+
+			color: var.$main-color;
+
+			&-container {
+				display: flex;
+				flex-direction: column;
+				row-gap: 8px;
+
+				margin-bottom: 24px;
+			}
+
+			&-text {
+				@include mixin.FontSize(60px);
+				font-weight: 700;
+			
+				background-color: var.$base-color;
+				padding: 13px 16px;
+
+				@include otherResponsive(1024px) {
+					@include mixin.FontSize(56px);
+				}
+
+				@include tab {
+					@include mixin.FontSize(40px);
+				}
+
+				@include sp {
+					@include mixin.FontSize(22px);
+					width: fit-content;
+					padding: 10px;
+				}
+			
+				&:first-of-type {
+					@include mixin.LetterSpacing(244);
+				}
+				&:last-of-type {
+					@include mixin.LetterSpacing(60);
+				}
+			
+				&--subtitle {
+					width: fit-content;
+					@include mixin.FontSize(18px);
+					@include mixin.LetterSpacing(100);
+
+					@include sp {
+						@include mixin.FontSize(13px);
+					}
+				}
+			}
+		}
+
+		&__action-button {
+			margin-top: 84px;
+
+			@include sp {
+				margin-top: 60px;
+				position: absolute;
+				left: 40px;
+			}
+		}
+
+		&__scroll {
+			position: absolute;
+			top: 640px;
+			right: 20px;
+
+			@include tab {
+				right: auto;
+				left: 20px;
+			}
+
+			@include sp {
+				top: 480px;
+			}
+		}
+	}
+
+	&-news {
+		position: absolute;
+		top: 735px;
+		right: 0;
+
+		background-color: var.$base-color;
+		padding: 26px /*353px*/20% 26px 5%;
+		display: flex;
+		align-items: center;
+		opacity: 0.95;
+
+		@include tab {
+			padding-right: 30px;
+		}
+		@include sp {
+			top: 545px;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&__title {
+			width: fit-content;
+			color: var.$main-color;
+			@include font.NeueHaasGrotesk;
+			font-weight: 500;
+			@include mixin.FontSize(22px);
+
+			padding-right: 22px;
+			border-right: 1px solid var.$main-color;
+		}
+		
+		&-container {
+			padding-left: 118px;
+			display: flex;
+			align-items: center;
+			column-gap: 32px;
+
+			@include mixin.FontSize(16px);
+
+			@include tab {
+				padding-left: 30px;
+				column-gap: 20px;
+			}
+			@include sp {
+				flex-direction: column;
+				align-items: flex-start;
+				padding-left: 0;
+				padding-top: 10px;
+				gap: 3px;
+			}
+			
+		}
+	}
+
+	&-concept {
+		@include mixin.FixContentsCenterPc;
+		@include SetBackGroundImageMain('../images/concept.png', left);
+
+		padding-top: 120px;
+		margin-bottom: 80px;
+		position: relative;
+
+		@include tab {
+			@include mixin.FixContentsCenterTablet;
+			padding-top: 80px;
+		}
+
+		@include sp {
+			@include mixin.FixContentsCenterSp;
+		}
+
+		&-inner {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			
+			@include tab {
+				margin-top: 40px;
+			}
+		}
+
+		&-contents {
+			width: 950px;
+
+			@include tab {
+				width: 100%;
+			}
+
+			&-container {
+				display: flex;
+				gap: 15px;
+
+				@include tab {
+					justify-content: space-between;
+				}
+
+				@include sp {
+					flex-direction: column;
+				}
+
+				img {
+					@include tab {
+						width: 44%;
+					}
+					@include sp {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			row-gap: 12px;
+			margin-top: 43px;
+			text-align: right;
+			
+			@include tab {
+				margin-top: 10px;
+			}
+
+			p {
+				margin-top: 38px;
+				@include mixin.FontSize(20px);
+				@include mixin.LetterSpacing(100);
+				color: var.$main-color;
+
+				@include sp {
+					margin-top: 10px;
+				}
+
+				span {
+					@include font.NeueHaasGrotesk;
+					@include mixin.FontSize(60px);
+					@include mixin.LetterSpacing(100);
+
+					@include tab {
+						@include mixin.FontSize(45px);
+					}
+
+					@include sp {
+						@include mixin.FontSize(35px);
+					}
+				}
+			}
+		}
+
+		&__text {
+			margin-top: 40px;
+			@include mixin.LineHeight(26, var.$font-size-small-text);
+
+			@include tab {
+				margin: 25px auto 0;
+				width: 90%;
+			}
+		}
+
+		&__button {
+			margin: 40px;
+			text-align: center;
+
+			@include tab {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&-features {
+		@include mixin.FixContentsCenterPc;
+		display: flex;
+		gap: 21%/*187px*/;
+		position: relative;
+
+		@include tab {
+			@include mixin.FixContentsCenterTablet;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		@include sp {
+			@include mixin.FixContentsCenterSp;
+		}
+
+		&-left {
+			width: 33%;
+
+			@include tab {
+				width: 100%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		&-right {
+			width: 53%;
+			margin-top: 40px;
+			display: flex;
+			flex-direction: column;
+			gap: 60px;
+
+			@include tab {
+				width: 80%;
+				margin: 40px auto 0;
+			}
+
+			@include sp {
+				width: 100%;
+				margin-top: 20px;
+			}
+
+			.list__item {
+				display: flex;
+				gap: 18px;
+				align-items: center;
+
+				@include pc {
+					&:nth-child(2) {
+						transform: translateX(-104px);
+					}
+					&:nth-child(3) {
+						transform: translateX(-201px);
+					}
+				}
+
+				@include sp {
+					gap: 10px;
+				}
+
+			}
+		}
+
+		&-title {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			gap: 16px;
+			margin-top: 80px;
+
+			@include tab {
+				margin-top: 30px;
+				gap: 8px;
+			}
+
+			p {
+				color: var.$main-color;
+				@include mixin.LetterSpacing(100);
+				padding-left: 10px
+			}
+		}
+
+		&__text {
+			margin-top: 40px;
+			color: var.$main-color;
+			@include mixin.LineHeight(26, var.$font-size-small-text);
+
+			@include tab {
+				margin-top: 20px;
+			}
+		}
+
+		&-no {
+			@include font.NeueHaasGrotesk;
+			@include mixin.FontSize(100px);
+			@include mixin.LetterSpacing(50);
+			color: #EFF1F4;
+			font-weight: 700;
+			width: 33%;
+
+			@include sp {
+				@include mixin.FontSize(55px);
+			}
+		}
+
+		&-contents {
+			@include sp {
+				width: 100%;
+			}
+
+			&-title {
+				@include mixin.FontSize(var.$font-size-big-text);
+				@include mixin.LetterSpacing(150);
+				color: var.$main-color;
+				font-weight: 700;
+
+				@include sp {
+					@include mixin.FontSize(22px);
+				}
+			}
+			
+			p {
+				margin-top: 11px;
+				@include mixin.LineHeight(26, var.$font-size-small-text);
+			}
+		}
+	}
+
+	&-service {
+		@include mixin.FixContentsCenterPc;
+		@include SetBackGroundImageMain('../images/service.png', right);
+
+		margin-top: 80px;
+		margin-bottom: 120px;
+		position: relative;
+
+		@include tab {
+			@include mixin.FixContentsCenterTablet;
+			margin-top: 200px;
+			margin-bottom: 80px;
+		}
+
+		@include sp {
+			@include mixin.FixContentsCenterSp;
+			margin-top: 200px;
+			margin-bottom: 80px;
+		}
+
+		&-contents  {
+			padding-top: 80px;
+
+			@include tab {
+				padding-top: 40px;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		&__text {
+			width: 83%;
+			margin-top: 40px;
+			@include mixin.LineHeight(26, var.$font-size-small-text);
+
+			@include tab{
+				margin-top: 20px;
+			}
+		}
+
+		&__card {
+			width: 82%;
+			margin: 40px auto 0;
+
+			@include tab {
+				width: 50%;
+			}
+
+			@include sp {
+				width: 83%
+			}
+		}
+	}
+
+	&-works {
+		@include mixin.FixContentsCenterPc;
+		@include SetBackGroundImageMain('../images/works.png', left);
+		position: relative;
+		margin-bottom: 91px;
+
+		@include tab {
+			@include mixin.FixContentsCenterTablet;
+			margin-bottom: 80px;
+		}
+
+		@include sp {
+			@include mixin.FixContentsCenterSp;
+			margin-bottom: 80px;
+		}
+
+		&-contents  {
+			padding-top: 80px;
+
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			@include tab {
+				padding-top: 40px;
+				align-items: center;
+			}
+		}
+
+		&__text {
+			margin-top: 40px;
+
+			@include tab {
+				margin-top: 20px;
+				width: 83%;
+				@include mixin.LineHeight(26, var.$font-size-small-text);
+			}
+		}
+
+		&__slider {
+			@include tab {
+				padding-top: 20px;
+			}
+		}
+
+	}
+
+	&-blog {
+		@include mixin.FixContentsCenterPc;
+		@include SetBackGroundImageMain('../images/blog.png', right);
+		position: relative;
+
+		@include tab{
+			@include mixin.FixContentsCenterTablet;
+			padding-top: 40px;
+		}
+		@include sp {
+			@include mixin.FixContentsCenterSp;
+		}
+
+		&-contents {
+			padding-top: 80px;
+
+			@include tab {
+				padding-top: 20px;
+			}
+			
+			.list {
+				max-width: 950px;
+				margin-left: auto;
+				margin-right: auto;
+
+				display: flex;
+				flex-direction: column;
+				position: relative;
+
+				background: var.$base-color;
+				padding: 25px 95px 55px;
+
+				@include tab {
+					padding: 25px 50px;
+				}
+
+				@include sp {
+					padding: 25px 10px;
+				}
+
+				&__item {
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					column-gap: 32px;
+					border-bottom: 1px solid #CACACA;
+					padding: 41px 0 29px;
+
+					@include tab {
+						padding: 30px 0 25px;
+					}
+
+					@include sp {
+						padding: 20px 0 15px;
+						flex-direction: column;
+						align-items: flex-start;
+						row-gap: 3px;
+					}
+
+					&:first-of-type {
+						padding-top: 0;
+					}
+
+					time {
+						padding-left: 40px;
+
+						@include sp {
+							padding-left: 0;
+						}
+					}
+
+					a {
+						width: 80%;
+
+						@include sp {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	&-contact {
+		padding-top: 80px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		
+		@include sp {
+			@include mixin.FixContentsCenterSp;
+			padding-top: 40px;
+		}
+
+		&__text {
+			color: var.$base-color;
+			@include mixin.LetterSpacing(100);
+			@include mixin.LineHeight(36, var.$font-size-big-text);
+		}
+
+
+	}
+}
+
+.action-button {
+	display: flex;
+	gap: 80px;
+
+	@include sp {
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+}
+
+.bg {
+	&--features {
+		@include pc {
+			@include mixin.SetBackGroundImage('../images/feature_bg.png');
+		}
+		height: 522px;
+	}
+
+	&--blog {
+		@include mixin.SetBackGroundImage('../images/blog_bg.png');
+		height: 515px;
+		margin-bottom: 80px;
+	}
+
+	&--contact {
+		@include mixin.SetBackGroundImage('../images/contact_bg.png');
+		height: 316px;
+	}
+}

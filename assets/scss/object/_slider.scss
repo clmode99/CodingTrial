@@ -1,0 +1,99 @@
+@use "../common/mixin";
+@use "../common/var";
+@use "../common/responsive" as *;
+
+.slider {
+	width: 100vw;
+	margin: 0 calc(50% - 50vw);
+
+	@include tab {
+		width: 80%;
+		margin: 0;
+	}
+
+	/* Element */
+	&__item {
+		position: relative;
+	}
+	
+	&__img {
+		display: block;
+		text-align: center;
+		height: 380px;
+
+		@include sp {
+			height: auto;
+		}
+	}
+
+	&__title {
+		@include mixin.FontSize(20px);
+		font-weight: 700;
+		color: var.$main-color;
+	}
+
+	&__text {
+		margin-top: 32px;
+		@include mixin.FontSize(var.$font-size-small-text);
+		@include mixin.LineHeight(26, var.$font-size-small-text);
+	}
+
+	&__button {
+		margin-top: 40px;
+		display: block;
+		text-align: center;
+	}
+
+	&__inner {
+		display: inline-flex;
+		flex-direction: column;
+		row-gap: 24px;
+	}
+
+	&__arrow {
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		
+		padding-top: 76px;
+
+		@include tab {
+			display: none;
+		}
+	}
+}
+
+// アクティブ以外のスライダー処理
+.slider__item {
+	@include pc {
+		&:not(.swiper-slide-active) {
+			.slider__img {
+				transform: scale(0.8);
+			}
+		
+			.slider__title, .slider__text, .slider__button {
+				display: none;
+			}
+		}
+
+	}
+}
+
+.swiper-button {
+	&-prev, &-next {
+		cursor: pointer;
+		width: 64px;
+		height: 64px;
+		line-height: 64px;
+		border-radius: 50%;
+		text-align: center;
+		color: #2D2D2D;
+		border: 1px solid #AEB6C7;
+		transition: .3s;
+
+		&:hover {
+			background:  var.$main2-color;
+		}
+	}
+
+}

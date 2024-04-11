@@ -1,0 +1,70 @@
+@use "../common/mixin";
+@use "../common/var";
+@use "../common/font";
+@use "../common/responsive" as *;
+
+$font-size-big-title   : 55px;
+$font-size-medium-title: 28px;
+$font-size-small-title : 20px;
+
+.title {
+	font-weight: 700;
+
+	/* Modifier */
+	// h2相当
+	&--big {
+		display: none;
+
+		@include tab {
+			display: block;
+
+			@include font.NeueHaasGrotesk;
+			@include mixin.FontSize($font-size-big-title);
+			@include mixin.LetterSpacing(100);
+			color: var.$main-color;
+			text-align: center;
+			font-weight: 700;
+		}
+
+		@include sp {
+			@include mixin.FontSize(50px);
+		}
+
+	}
+
+	// h3相当
+	&--medium {
+		width: fit-content;
+		@include mixin.FontSize($font-size-medium-title);
+		@include mixin.LetterSpacing(100);
+		color: #FFF;
+		background-color: var.$main-color;
+		padding: 13px;
+
+		@include tab {
+			@include mixin.FontSize(23px);
+		}
+		@include sp {
+			@include mixin.FontSize(20px);
+		}
+	}
+
+	// h4相当
+	&--small {
+		background-color: var.$base-color;
+		@include mixin.FontSize($font-size-small-title);
+		@include mixin.LetterSpacing(100);
+		font-weight: 700;
+		padding: 10px 16px;
+		color: var.$main-color;
+	}
+
+	&--right {
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: 0;
+		}
+
+	}
+}

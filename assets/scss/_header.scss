@@ -1,0 +1,36 @@
+@use "common/var";
+@use "common/responsive" as *;
+
+.header {
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	position: relative;
+	z-index: 10;
+	background-color: var.$base-color;
+
+	&-left {
+		margin-left: 2%/*53px*/;
+
+		@include tab {
+			margin-left: 15px;
+		}
+	}
+
+	&-right {
+		position: relative;
+		display: flex;
+		align-items: center;
+		column-gap: 40px;
+
+		@include otherResponsive(1500px) {
+			column-gap: 15px;
+		}
+
+		@include tab {
+			display: none;
+		}
+	}
+}

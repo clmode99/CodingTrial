@@ -1,0 +1,58 @@
+@use "../common/mixin";
+
+@mixin Border {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+@mixin Padding {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.table {
+	@include Border;
+
+
+	/* Element */
+
+
+	/* Modifier */
+
+}
+
+.thead {
+	&__tr {
+		
+	}
+
+	&__th {
+		@include Border;
+		@include Padding;
+		text-align: left;
+	}
+
+	&__td {
+		@include Border;
+		@include Padding;
+	}
+}
+
+.tbody {
+	&__tr {
+
+	}
+
+	&__th {
+		@include Border;
+		@include Padding;
+		text-align: left;
+		background-color: lightgray;
+	}
+
+	&__td {
+		@include Border;
+		@include Padding;
+	}
+}

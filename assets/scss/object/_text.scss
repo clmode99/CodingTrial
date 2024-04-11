@@ -1,0 +1,38 @@
+@use "../common/mixin";
+@use "../common/var";
+@use "../common/font";
+@use "../common/responsive" as *;
+
+.text {
+	@include mixin.FontSize(var.$font-size-medium-text);
+
+	&--small {
+		@include mixin.FontSize(var.$font-size-small-text);
+
+		@include sp {
+			@include mixin.FontSize(12px);
+		}
+	}
+	&--big {
+		@include mixin.FontSize(var.$font-size-big-text);
+
+		@include sp {
+			@include mixin.FontSize(18px);
+		}
+	}
+
+	&-date {
+		@include mixin.FontSize(16px);
+		color: #2D2D2D;
+		@include font.Quicksand;
+		
+		@include sp {
+			@include mixin.FontSize(14px);
+		}
+	}
+
+	&--center {
+		display: block;
+		text-align: center;
+	}
+}

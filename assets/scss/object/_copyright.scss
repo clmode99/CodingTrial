@@ -1,0 +1,10 @@
+@use "../common/mixin";
+@use "../common//var";
+
+$font-size-copyright: 11px;
+
+.copyright {
+	@include mixin.FontSize($font-size-copyright);
+	color: var.$main2-color;
+	font-weight: 300;
+}

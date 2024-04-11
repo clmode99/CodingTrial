@@ -1,0 +1,58 @@
+@use "../common/mixin";
+@use "../common/var";
+
+.accordion {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	row-gap: 32px;
+	width: 100%;
+
+	/* Element */
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		row-gap: 28px;
+	}
+
+	&__question {
+		background-color: #FFF;
+		padding: 12px;
+		@include mixin.FontSize(18px);
+		font-weight: 700;
+		cursor: pointer;
+
+		&::before {
+			content: 'Q';
+			@include mixin.FontSize(24px);
+			margin-right: 9px;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 700;
+		}
+		&::after {
+			content: '';
+			display: inline-block;
+			width: 16px;
+			height: 10px;
+			background: url('../images/arrow.svg') no-repeat;
+			background-size: contain;
+
+			position: absolute;
+			top: 22px;
+			right: 15px;
+		}
+
+		&.active {
+			&::after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&__answer {
+		@include mixin.FontSize(var.$font-size-medium-text);
+		@include mixin.LineHeight(24, var.$font-size-medium-text);
+	}
+
+}
